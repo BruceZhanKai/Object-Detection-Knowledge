@@ -1,38 +1,47 @@
 # Object-Detection-Knowledge
-## FCN(Fully Convolutional Networks)
-- [reference 1](http://simtalk.cn/2016/11/01/Fully-Convolutional-Networks)
-- [reference 2](https://zhuanlan.zhihu.com/p/22976342)
-- [paper](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf)
 
-## Faster RCNN
+## Faster RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/u013010889/article/details/78574879)
 
-## Mask RCNN
+## Mask RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/xiamentingtao/article/details/78598511)
 - [reference 2](https://blog.csdn.net/u013010889/article/details/78588227)
 
-## Light-Head R-CNN
+## Light-Head R-CNN (Face++)
 - [reference 1](http://www.sohu.com/a/212814713_610300)
 - [reference 2](https://blog.csdn.net/zealoe/article/details/78606116)
 - [paper](https://arxiv.org/abs/1711.07264)
 
-## RPN(Regional Proposal Networks)
+## RPN - Regional Proposal Networks
 - [reference 1](https://blog.csdn.net/happyflyy/article/details/54917514)
+- [reference 2](https://www.zhihu.com/question/265345106)
+- [reference 3](https://blog.csdn.net/YZXnuaa/article/details/79221189)
 
+## FPN - Feature Pyramid Networks (Facebook AI)
+- [reference 1](https://blog.csdn.net/u014380165/article/details/72890275)
+- [reference 2](https://blog.csdn.net/BEHIND_YOU/article/details/79714164)
+- [paper](https://arxiv.org/abs/1612.03144)
 
-## Focal Loss for Dense Object Detection(one stage)
+## Focal Loss for Dense Object Detection (Facebook AI)
 - [reference 1](https://blog.csdn.net/u014380165/article/details/77019084)
 - [reference 2](https://data-sci.info/2017/08/10/%E4%BE%86%E8%87%AAfacebook-research%E7%89%A9%E9%AB%94%E5%81%B5%E6%B8%AC%E7%9A%84%E6%9C%80%E6%96%B0%E9%80%B2%E5%B1%95%EF%BC%9Afocal-loss-dense-object-detection-2/)
 - [reference 3](https://www.zhihu.com/question/63581984)
 - [paper](https://arxiv.org/abs/1708.02002)
 
-## DenseNet (backbone)
+## DenseNet (Facebook AI)
 - [reference 1](https://www.zhihu.com/question/60109389/answer/173011950)
 
-## DetNet: A Backbone network for Object Detection
+## DetNet: A Backbone network for Object Detection (Face++)
 - [reference 1](https://blog.csdn.net/JNingWei/article/details/80004070)
 - [reference 2](https://www.zhihu.com/question/273770471)
 - [paper](https://arxiv.org/abs/1804.06215)
+- [zengarden/light_head_rcnn(extand from 2)](https://github.com/zengarden/light_head_rcnn)
+- [chenyilun95/tf-cpn(COCO skeleton 1st)(extand from 2)](https://github.com/chenyilun95/tf-cpn)
+
+## ROI Align
+- [reference 1](http://blog.leanote.com/post/afanti.deng@gmail.com/b5f4f526490b)
+- [reference 2](http://www.cnblogs.com/wangyong/p/8523814.html)
+
 
 ## Implement
 - [D-X-Y/caffe-faster-rcnn](https://github.com/D-X-Y/caffe-faster-rcnn/tree/dev)
@@ -40,6 +49,7 @@
 - [makefile/frcnn](https://github.com/makefile/frcnn/tree/fpn)
 - [mmclkv/caffe-mask-rcnn](https://github.com/mmclkv/caffe-mask-rcnn)
 - [jasjeetIM/Mask-RCNN](https://github.com/jasjeetIM/Mask-RCNN)
+- [nqanh/affordance-net](https://github.com/nqanh/affordance-net)
 - [unsky/FPN](https://github.com/unsky/FPN)
 - [chuanqi305/FocalLoss](https://github.com/chuanqi305/FocalLoss)
 - [zuokai/roialign](https://github.com/zuokai/roialign)
@@ -72,4 +82,16 @@
 - [finetuning](https://www.zhihu.com/question/35754716)
 - [caffe kernal](http://caffecn.cn/?/question/158)
 - [caffe num_output](http://www.caffecn.cn/?/question/534)
+- [interview](https://github.com/elviswf/DeepLearningBookQA_cn)
 
+## FCN - Fully Convolutional Networks 
+- [reference 1](http://simtalk.cn/2016/11/01/Fully-Convolutional-Networks)
+- [reference 2](https://zhuanlan.zhihu.com/p/22976342)
+- [paper](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf)
+
+## Tool
+- [labelme](https://github.com/wkentaro/labelme)
+
+## VAE-GAN
+- [reference 1](https://github.com/JeremyCCHsu/tf-vaegan)
+- [paper](http://www.iwait2018.org/Paper%20IWAIT2018/IWAIT2018_paper_164.pdf)
