@@ -6,6 +6,7 @@
 
 ## Faster RCNN
 - [reference 1](https://blog.csdn.net/u013010889/article/details/78574879)
+
 ## Mask RCNN
 - [reference 1](https://blog.csdn.net/xiamentingtao/article/details/78598511)
 - [reference 2](https://blog.csdn.net/u013010889/article/details/78588227)
@@ -27,6 +28,11 @@
 
 ## DenseNet (backbone)
 - [reference 1](https://www.zhihu.com/question/60109389/answer/173011950)
+
+## DetNet: A Backbone network for Object Detection
+- [reference 1](https://blog.csdn.net/JNingWei/article/details/80004070)
+- [reference 2](https://www.zhihu.com/question/273770471)
+- [paper](https://arxiv.org/abs/1804.06215)
 
 ## Implement
 - [D-X-Y/caffe-faster-rcnn](https://github.com/D-X-Y/caffe-faster-rcnn/tree/dev)
