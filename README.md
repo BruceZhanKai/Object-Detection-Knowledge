@@ -1,11 +1,22 @@
 # Object-Detection-Knowledge
 
+## Object Detection
+- [reference 1](https://handong1587.github.io/deep_learning/2015/10/09/object-detection.html#retinanet)
+
 ## Faster RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/u013010889/article/details/78574879)
+- [python](https://blog.csdn.net/u011956147/article/details/53053381)
+- [HermannHesse/faster_rcnn_cplusplus](https://github.com/HermannHesse/faster_rcnn_cplusplus)
 
 ## Mask RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/xiamentingtao/article/details/78598511)
 - [reference 2](https://blog.csdn.net/u013010889/article/details/78588227)
+
+## YOLO v3
+- [reference 1](https://read01.com/zh-tw/O3xaRJ0.html#.WzLnNaczaUm)
+
+## SSD
+- [reference 1](https://www.cnblogs.com/xuanyuyt/p/7447111.html)
 
 ## Light-Head R-CNN (Face++)
 - [reference 1](http://www.sohu.com/a/212814713_610300)
@@ -96,3 +107,22 @@
 ## VAE-GAN
 - [reference 1](https://github.com/JeremyCCHsu/tf-vaegan)
 - [paper](http://www.iwait2018.org/Paper%20IWAIT2018/IWAIT2018_paper_164.pdf)
+
+## TX2
+- [reference 1](https://mp.weixin.qq.com/s?__biz=MjM5NTE3Nzk4MQ==&mid=2651233122&idx=2&sn=1432ec9259b21f15e4ed2a605663e336&chksm=bd0e4ff08a79c6e6de57fccbb2252b5153616d923ced475601b914499df0ffdfbf32bedef610#rd)
+
+## MobileFaceNet
+- [reference 1](https://github.com/imistyrain/MobileFaceNet)
+
+## Caffe 2
+- [Caffe2 with C++](https://caffe2.ai/docs/cplusplus_tutorial.html)
+- [Caffe2 C++](http://caffecn.cn/?/article/47)
+- [Caffe2](https://www.zhihu.com/question/58698158)
+- [Detectron](https://www.zhihu.com/question/266026480)
+- [Caffe2 into PyTorch](https://www.zhihu.com/question/270578639)
+- [Caffe&Caffe2](https://juejin.im/entry/58fd79b9da2f60005dc93411)
+- [Build Caffe2 win10 GPU](https://research.wmz.ninja/articles/2017/05/build-caffe2-on-windows-10-gpu.html)
+- [Build PyTorch win10 GPU](https://caffe2.ai/docs/getting-started.html?platform=windows&configuration=compile)
+- [Detectron in C++](https://github.com/facebookresearch/Detectron/issues/199)
+- [Detectron in win10](https://github.com/facebookresearch/Detectron/issues/276)
+- [Detectron in win10](https://github.com/facebookresearch/Detectron/issues/25)
