@@ -126,3 +126,8 @@
 - [Detectron in C++](https://github.com/facebookresearch/Detectron/issues/199)
 - [Detectron in win10](https://github.com/facebookresearch/Detectron/issues/276)
 - [Detectron in win10](https://github.com/facebookresearch/Detectron/issues/25)
+- [jhjin/caffe2-cpp](https://github.com/jhjin/caffe2-cpp)
+- [Caffe2 C++ predict](https://www.cnblogs.com/zhonghuasong/p/7297696.html)
+- [Caffe2 C++ predict](https://blog.csdn.net/Joson_yuan/article/details/79380130)
+- [Caffe2 C++ method](http://caffecn.cn/?/article/47)
+
