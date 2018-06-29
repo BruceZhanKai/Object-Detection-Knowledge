@@ -5,8 +5,13 @@
 
 ## Faster RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/u013010889/article/details/78574879)
-- [python](https://blog.csdn.net/u011956147/article/details/53053381)
+- [python detail training](https://blog.csdn.net/u011956147/article/details/53053381)
 - [HermannHesse/faster_rcnn_cplusplus](https://github.com/HermannHesse/faster_rcnn_cplusplus)
+- [reference 2](http://www.360doc.com/content/17/0303/14/10408243_633634497.shtml)
+- [paper transfer](https://blog.csdn.net/ture_dream/article/details/52896452)
+
+## NMS - Non-Maximum Suppression 
+-[reference 1](https://www.cnblogs.com/makefile/p/nms.html)
 
 ## Mask RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/xiamentingtao/article/details/78598511)
@@ -31,6 +36,7 @@
 ## FPN - Feature Pyramid Networks (Facebook AI)
 - [reference 1](https://blog.csdn.net/u014380165/article/details/72890275)
 - [reference 2](https://blog.csdn.net/BEHIND_YOU/article/details/79714164)
+- [reference 3](https://blog.csdn.net/sloanqin/article/details/51545125)
 - [paper](https://arxiv.org/abs/1612.03144)
 
 ## Focal Loss for Dense Object Detection (Facebook AI)
