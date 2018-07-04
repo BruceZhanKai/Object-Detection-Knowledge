@@ -1,0 +1,121 @@
+
+
+1. 如果改了LibPackage的header, SolDeepLearning_CPP的header也要一併更改
+
+2. MaskAlignLayer (MaskAlign_layer.cpp)
+   計算當前proposal roi與ground turth roi交集的mask
+   input : proposal roi, ground turth roi, ground turth mat
+   output: proposal mat
+   交集已經在FrcnnProposalTargetLayer做了,可以直接從這裡拿
+   (不好拿 因為Angle用top.size()>5判斷要不要做 加了Mask也有可能size==6 Layer本身不看name 無法確切知道case是哪種)  
+   
+   bottom: "rois" (from FrcnnProposalTargetLayer)
+   bottom: "gt_boxes" (from FrcnnRoiData)
+   bottom: "gt_mask" (from FrcnnRoiData)
+   bottom: "labels" (generate from FrcnnProposalTargetLayer) (why need this)
+   top: "masks" (to SigmoidCrossEntropyLossLayer)
+   
+   rois與labels是配好的 與GT的所有ROI找出最近的當作是配對好的要拿來算交集mask的
+   確認該rois的labels>0表示是FG前景,則存至top[0]往LossFunc傳
+   
+3. ROIAlignLayer (roi_align_layer.cpp)
+   雙線性插值, 優化並取代roi pooling的兩次量化的失真
+   將每個proposal roi從feature map中轉化成固定width height
+   的pooling計算
+   
+   bottom: "conv5"
+   bottom: "rois"
+   top: "pool5"
+   
+   bottom: "conv5"
+   bottom: "rois"
+   top: "pool6"
+   
+4. FrcnnProposalTargetLayer (frcnn_proposal_target_layer.cpp)
+   計算當前proposal roi與所有ground turth的最大overlap配對
+   
+   bottom: "rpn_rois"
+   bottom: "gt_boxes"
+   top: "rois"
+   top: "labels" (to AccuracyLayer && MaskAlignLayer)
+   top: "bbox_targets"
+   top: "bbox_inside_weights"
+   top: "bbox_outside_weights" 
+   
+5. FrcnnAnchorTargetLayer (frcnn_anchor_target_layer.cpp)
+   top[0] = label (1 or 0 or -1) [1,1,9*512,512]
+   label.size()=config_n_anchors_*height*width=9*512*512(anchor總數)
+   height=con_5_height, width=con5_width (original image size / 16) (feature map size)
+   
+   rpn_cls_score->top[0] [1,18,512,512]
+   rpn_cls_score_reshape->top[0] [1,2,9*512,512]
+   
+   bottom: 'rpn_cls_score' (from ReShape)
+   bottom: 'gt_boxes' (from FrcnnRoiData)
+   bottom: 'im_info' (from FrcnnRoiData)
+   top: 'rpn_labels' 
+   top: 'rpn_bbox_targets' 
+   top: 'rpn_bbox_inside_weights' 
+   top: 'rpn_bbox_outside_weights' 
+   
+   
+6. FrcnnProposalLayer (frcnn_proposal_layer)
+   
+   1)generate all anchors 9*512*512
+   2)update new bbox using Point4f<Dtype> cbox = bbox_transform_inv(anchor, box_delta);
+   3)rpn_pre_nms_top_n: 以score取前120000個anchor
+     放進sort_vector,而anchors不動
+   4)rpn_post_nms_top_n: 用get_iou,從score最高開始比
+     刪除兩者iou大於rpn_nms_thresh且score較低者
+	 比如說score第一的跟後面所有人比,iou大於0.7就消除score小的
+     比過的被留下來的不會再被比
+     比過被刪除的不會再被比	 
+     放進box_final,scores_
+	 
+   
+
+   
+8. anchor (https://blog.csdn.net/XZZPPP/article/details/52317863)
+   1)請問三種尺度{128,256,512}對應的原圖還是卷積後的特徵圖啊？
+     對應原圖
+   2)更改base_size = 16為其他值時，除了此處有變動，faster rcnn還有其他對應的地方需要更改變動嗎？
+	 在程序中看來，base_size是一個基類模板大小（也可以理解為anchor），在此基礎上乘上scales，得到需要的尺寸，如128，256，512。
+	 所以base_size發生變化，scales需要相應變化。
+   3)將base_size變大和變小，分別適用於哪些情況？
+     一般原圖如果比較大，base_size需要大點，如果原圖比較小，base_size相應需要小點。
+	 
+	 
+	 
+	 
+	 
+100. mutable_cpu_data (https://blog.csdn.net/xizero00/article/details/51001206)
+     mutable在這裡的含義是“易變的”。
+     cpu_data()和mutable_cpu_data()這兩個函數可以理解為一個為const成員函數另一個非const。
+     mutable_cpu_data()取得的數據指針意味著其數據接下來將被改變，所以要將head_置為HEAD_AT_CPU。
+     這個標誌位意味著最新的數據塊在CPU內存中，而不是GPU顯存中。
+     假設接下來要調用gpu_data()或mutable_gpu_data()，那麼將會從內存拷貝一份最新的數據到顯存，實現內存到顯存的數據同步。
+     相反的情況同理。
+     (https://blog.csdn.net/xizero00/article/details/51842704)
+     當你想讀取數據的時候請使用cpu_data
+     當然想修改數據的時候請你使用mutable_cpu_data。
+     這樣就提示系統數據我改過啦，你要小心了的意思(我只知道數據一定在CPU上)。
+   
+   
+
+101. RPN與Fast R-CNN特徵共享 (http://www.360doc.com/content/17/0303/14/10408243_633634497.shtml)
+FasterRCNN算法由兩大模塊組成
+1)RPN候選框提取模塊
+2)FastRCNN檢測模塊
+需要一種允許兩個網路間共享卷積層的技術,而不是分別學習兩個網路
+FastRCNN訓練依賴於固定的目標建議框,不清楚當同時改變建議機制時,學習FastRCNN會不會收斂
+RPN和FastRCNN共用了13個VGG卷積層,顯然將這兩個網路完全孤立訓練不是明智的選擇
+作者採用交替訓練(Alternating Traning)階段卷積層特徵共享
+Step1: 依上述訓練RPN,該網路用ImageNet預訓練的模型初始化,並端到端微調用於區域建議任務
+Step2: 利用Step1的RPN生成的建議框,由FastRCNN訓練一個單獨的檢測網路,
+       這個檢測網路同樣由ImageNet預訓練的模型初始化,這時候兩個網路還沒共享卷積層
+Step3: 用檢測網路初始化RPN訓練,固定共享卷積層,只微調RPN獨有的層,構成一個統一的網路
+Step4: 保持共享的卷積層固定,微調FastRCNN的FC層,這樣兩個網路共享相同卷積層,構成一個統一的網路
+
+
+
+   
