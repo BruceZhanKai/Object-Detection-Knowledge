@@ -7,7 +7,7 @@
 - [reference 1](https://blog.csdn.net/u013010889/article/details/78574879)
 - [python detail training](https://blog.csdn.net/u011956147/article/details/53053381)
 - [HermannHesse/faster_rcnn_cplusplus](https://github.com/HermannHesse/faster_rcnn_cplusplus)
-- [reference 2](http://www.360doc.com/content/17/0303/14/10408243_633634497.shtml)
+- [reference 2 important](http://www.360doc.com/content/17/0303/14/10408243_633634497.shtml)
 - [paper transfer](https://blog.csdn.net/ture_dream/article/details/52896452)
 - [SmoothL1Loss](https://blog.csdn.net/wfei101/article/details/79809332)
 - [SmoothL1Loss](https://blog.csdn.net/wfei101/article/details/79252021)
