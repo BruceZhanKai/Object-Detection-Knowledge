@@ -116,6 +116,7 @@
 - [caffe kernal](http://caffecn.cn/?/question/158)
 - [caffe num_output](http://www.caffecn.cn/?/question/534)
 - [interview](https://github.com/elviswf/DeepLearningBookQA_cn)
+- [basic concept](https://www.imooc.com/article/23802)
 
 ## FCN - Fully Convolutional Networks 
 - [reference 1](http://simtalk.cn/2016/11/01/Fully-Convolutional-Networks)
