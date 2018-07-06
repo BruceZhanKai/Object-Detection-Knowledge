@@ -5,7 +5,7 @@
 - [one stage & two stage](https://www.zhihu.com/question/266143762)
 
 
-## Faster RCNN (Facebook AI)
+## Faster RCNN (Facebook AI Research)
 - [reference 1](https://blog.csdn.net/u013010889/article/details/78574879)
 - [python detail training](https://blog.csdn.net/u011956147/article/details/53053381)
 - [HermannHesse/faster_rcnn_cplusplus](https://github.com/HermannHesse/faster_rcnn_cplusplus)
@@ -28,7 +28,7 @@
 - [two-stage Faster R-CNN](https://zhuanlan.zhihu.com/p/24916624?refer=xiaoleimlnote)
 - [one-stage YOLO](https://zhuanlan.zhihu.com/p/24916786)
 
-## Mask RCNN (Facebook AI)
+## Mask RCNN (Facebook AI Research)
 - [reference 1](https://blog.csdn.net/xiamentingtao/article/details/78598511)
 - [reference 2](https://blog.csdn.net/u013010889/article/details/78588227)
 
@@ -48,19 +48,21 @@
 - [reference 2](https://www.zhihu.com/question/265345106)
 - [reference 3](https://blog.csdn.net/YZXnuaa/article/details/79221189)
 
-## FPN - Feature Pyramid Networks (Facebook AI)
+## FPN - Feature Pyramid Networks (Facebook AI Research)
 - [reference 1](https://blog.csdn.net/u014380165/article/details/72890275)
 - [reference 2](https://blog.csdn.net/BEHIND_YOU/article/details/79714164)
 - [reference 3](https://blog.csdn.net/sloanqin/article/details/51545125)
 - [paper](https://arxiv.org/abs/1612.03144)
+- [implement 參數共享](https://github.com/unsky/FPN/blob/master/models/pascal_voc/FPN/FP_Net_end2end/train.prototxt)
+- [implement fpn](https://github.com/makefile/frcnn/blob/master/examples/FRCNN/fpn/fpn-vgg16-train.proto)
 
-## Focal Loss for Dense Object Detection (Facebook AI)
+## Focal Loss for Dense Object Detection (Facebook AI Research)
 - [reference 1](https://blog.csdn.net/u014380165/article/details/77019084)
 - [reference 2](https://data-sci.info/2017/08/10/%E4%BE%86%E8%87%AAfacebook-research%E7%89%A9%E9%AB%94%E5%81%B5%E6%B8%AC%E7%9A%84%E6%9C%80%E6%96%B0%E9%80%B2%E5%B1%95%EF%BC%9Afocal-loss-dense-object-detection-2/)
 - [reference 3](https://www.zhihu.com/question/63581984)
 - [paper](https://arxiv.org/abs/1708.02002)
 
-## DenseNet (Facebook AI)
+## DenseNet (Facebook AI Research)
 - [reference 1](https://www.zhihu.com/question/60109389/answer/173011950)
 
 ## DetNet: A Backbone network for Object Detection (Face++)
@@ -91,6 +93,7 @@
 - [Caffemodel&Protocol Buffer](https://blog.csdn.net/zyazky/article/details/52229539)
 - [Tensorflow2Caffe](https://blog.csdn.net/jiongnima/article/details/72904526)
 - [Caffemodel Read](https://blog.csdn.net/foolsnowman/article/details/50846754)
+
 ## CaffeLayer
 - [Solver Parameter](https://blog.csdn.net/JNingWei/article/details/78863446)
 - [Fully Connection](http://www.cnblogs.com/JZ-Ser/p/7150950.html)
@@ -100,6 +103,7 @@
 - [Slice 2](https://blog.csdn.net/u012235274/article/details/52438479)
 - [Slice 3](https://blog.csdn.net/wfei101/article/details/78449265)
 - [Slice 4](http://vra.github.io/2016/12/13/siamese-caffe/)
+- [MTCNN concat & slice](http://www.nanjixiong.com/thread-122530-1-1.html)
 
 ## Network Slimming (BatchNorm)
 - [reference 1](https://blog.csdn.net/u014380165/article/details/79969132)
