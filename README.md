@@ -2,6 +2,8 @@
 
 ## Object Detection
 - [reference 1](https://handong1587.github.io/deep_learning/2015/10/09/object-detection.html#retinanet)
+- [one stage & two stage](https://www.zhihu.com/question/266143762)
+
 
 ## Faster RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/u013010889/article/details/78574879)
@@ -13,7 +15,18 @@
 - [SmoothL1Loss](https://blog.csdn.net/wfei101/article/details/79252021)
 
 ## NMS - Non-Maximum Suppression 
--[reference 1](https://www.cnblogs.com/makefile/p/nms.html)
+- [reference 1](https://www.cnblogs.com/makefile/p/nms.html)
+- 目標檢測中提取分數最高的窗口的。
+- 例如在行人檢測中，滑動窗口經提取特徵，經分類器分類識別後，每個窗口都會得到一個分數。
+- 但是滑動窗口會導致很多窗口與其他窗口存在包含或者大部分交叉的情況。
+- 這時就需要用到NMS來選取那些鄰域里分數最高（是行人的概率最大），並且抑制那些分數低的窗口。
+
+## R-FCN
+- [reference 1](https://zhuanlan.zhihu.com/p/30867916)
+- R-CNN、SPP、Fast R-CNN、Faster R-CNN、YOLO、SSD、R-FCN、YOLO9000、DSSD、Mask R-CNN、FPN、RetinaNet、MegDet、Light-Head R-CNN。
+- 按這個順序看論文就行。知乎上都有講解。
+- [two-stage Faster R-CNN](https://zhuanlan.zhihu.com/p/24916624?refer=xiaoleimlnote)
+- [one-stage YOLO](https://zhuanlan.zhihu.com/p/24916786)
 
 ## Mask RCNN (Facebook AI)
 - [reference 1](https://blog.csdn.net/xiamentingtao/article/details/78598511)

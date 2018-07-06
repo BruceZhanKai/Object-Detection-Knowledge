@@ -72,7 +72,13 @@
      比過被刪除的不會再被比	 
      放進box_final,scores_
 	 
-   
+7. prep_im_for_blob(im, cfg.PIXEL_MEANS, target_size, cfg.TRAIN.MAX_SIZE) (https://hk.saowen.com/a/434b90f5a46f3c1a0382f03a9c138397da6dc18ad609f276a394ba09a4e84a7a)  
+   其中target_size就是該圖像對應的scale=600
+   這個函數先將圖像減均值，然後嘗試用target_size/短邊長度，得到一個scale，
+   再用這個scale乘長邊，如果大於MAX_SIZE，則scale為MAX_SIZE/長邊長度。再使用opencv將圖像resize。
+   最後得到的圖像結果是：
+   要麼長邊=1000，短邊小於600；
+   要麼短邊=600，長邊<=1000。
 
    
 8. anchor (https://blog.csdn.net/XZZPPP/article/details/52317863)
@@ -84,10 +90,36 @@
    3)將base_size變大和變小，分別適用於哪些情況？
      一般原圖如果比較大，base_size需要大點，如果原圖比較小，base_size相應需要小點。
 	 
+   (https://blog.csdn.net/u012905422/article/details/52634208)
+
+   生成的9個anchor，前三排基本除去一些隨機抖動以外不同scale但是ratio相同，
+   均為[-2, -1, 2, 1]，中間三排為[-1, -1, 1, 1]，最後三排為[-1, -2, 1, 2]。
+
+
+	
+9. RPN parameter (https://blog.csdn.net/happyflyy/article/details/54917514)
+   RPN所需要的參數。其中值得注意的參數有
+   batch_size：[256]每幅圖像中篩選使用的bg樣本和fg樣本的總個數
+   fg_fraction：[0.5]batch_size中fg樣本的比例，如果fg樣本個數不足，則添加bg樣本
+   drop_boxes_runoff_image：[1]在訓練階段是否去掉超出圖像邊界的anchors 
+   bg_thresh_hi：[0.3]被看做反例樣本的anchor與groundtruth的最大IoU 
+   bg_thresh_lo：[0]被看做反例樣本的anchor與groundtruth的最小IoU 
+   fg_thresh ：[0.7]被看做正例樣本的anchor與groundtruth的最小IoU 
+   ims_per_batch：[1]訓練時每次輸入的圖像個數，當前只支持每次輸入一幅圖像
+   scale：[600]短邊縮放後最小值
+   max_size：[1000]長邊縮放後最大值
+   feat_stride：[16]VGG中conv5_3相比於輸入圖像縮小了16倍，也就是相鄰兩個點之間的stride=16 
+   anchors：不同長寬比和尺度的9個基本anchors 
+   output_width_map：輸入圖像的寬度和conv5_3寬度的對應關係
+   output_height_map：輸入圖像的高度和conv5_3高度的對應關 系
+   bg_weight：[1]計算損失時每個反例樣本的權值，正例樣本權值全為1 
+   image_means：圖像均值	 
 	 
-	 
-	 
-	 
+	
+
+
+
+	
 100. mutable_cpu_data (https://blog.csdn.net/xizero00/article/details/51001206)
      mutable在這裡的含義是“易變的”。
      cpu_data()和mutable_cpu_data()這兩個函數可以理解為一個為const成員函數另一個非const。
