@@ -140,6 +140,10 @@
 ## MobileFaceNet
 - [reference 1](https://github.com/imistyrain/MobileFaceNet)
 
+## Face Recognition Series
+- [blogs](https://blog.csdn.net/fire_light_/article/list/1)
+
+
 ## Caffe 2
 - [Caffe2 with C++](https://caffe2.ai/docs/cplusplus_tutorial.html)
 - [Caffe2 C++](http://caffecn.cn/?/article/47)
